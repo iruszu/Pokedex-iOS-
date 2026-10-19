@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct PokeAPIApp: App {
+    @State private var favorites = FavoritesStore()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootTabView()
+                .environment(favorites)
         }
     }
 }
